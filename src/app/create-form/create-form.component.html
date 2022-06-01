@@ -3,18 +3,37 @@
   <form [formGroup]="form" (ngSubmit)="submit()">
     <div class="mb-3">
       <label for="inputUsername">Username</label>
-      <input class="form-control" type="text" id="inputUsername" formControlName="username">
+      <input
+        class="form-control"
+        type="text"
+        id="inputUsername"
+        formControlName="username"
+        [class.is-invalid]="form.get('username')?.invalid && form.get('username')?.touched"
+      >
     </div>
     <div class="mb-3">
       <label for="inputFIO">Full name</label>
-      <input class="form-control" type="text" id="inputFIO" formControlName="name">
+      <input
+        class="form-control"
+        type="text"
+        id="inputFIO"
+        formControlName="name"
+        [class.is-invalid]="form.get('name')?.invalid && form.get('name')?.touched"
+      >
     </div>
     <div class="mb-3">
       <label for="inputEmail">Email</label>
-      <input class="form-control" type="text" id="inputEmail" aria-describedby="emailHelp" formControlName="email">
+      <input
+        class="form-control"
+        type="text"
+        id="inputEmail"
+        aria-describedby="emailHelp"
+        formControlName="email"
+        [class.is-invalid]="form.get('email')?.invalid && form.get('email')?.touched"
+      >
       <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
     </div>
-    <button type="submit" class="btn btn-dark" type="submit">Submit</button>
+    <button type="submit" class="btn btn-dark" type="submit" [disabled]="form.invalid">Create</button>
   </form>
   </div>
 </div>

@@ -12,11 +12,14 @@ export interface User {
 @Injectable({providedIn: 'root'})
 
 export class TableUserService {
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient) {}
 
-  }
   fetchUsers(): Observable<User[]> {
     return this.http.get<User[]>('https://jsonplaceholder.typicode.com/users')
+  }
+
+  createNewUser(user: User): Observable<User> {
+    return this.http.post<User>('https://jsonplaceholder.typicode.com/users', user)
   }
 
 
