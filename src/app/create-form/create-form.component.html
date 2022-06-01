@@ -1,0 +1,20 @@
+<div class="container-xxl py-4">
+  <div class="col-md-4 mx-auto border bg-light p-4 ">
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <div class="mb-3">
+      <label for="inputUsername">Username</label>
+      <input class="form-control" type="text" id="inputUsername" formControlName="username">
+    </div>
+    <div class="mb-3">
+      <label for="inputFIO">Full name</label>
+      <input class="form-control" type="text" id="inputFIO" formControlName="name">
+    </div>
+    <div class="mb-3">
+      <label for="inputEmail">Email</label>
+      <input class="form-control" type="text" id="inputEmail" aria-describedby="emailHelp" formControlName="email">
+      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+    <button type="submit" class="btn btn-dark" type="submit">Submit</button>
+  </form>
+  </div>
+</div>
